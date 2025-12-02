@@ -7,21 +7,21 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                echo 'make all'
+                sh 'make all'
             }
         }
 
       stage('test') {
             steps {
-                echo 'mkdir bins'
-                echo 'cp *.out bins'
-                echo 'ls bins | wc -l'
+                sh 'mkdir bins'
+                sh 'cp *.out bins'
+                sh 'ls bins | wc -l'
             }
         }
 
       stage('package') {
             steps {
-                echo 'tar zcf commands.tar.gz bins'
+                sh 'tar zcf commands.tar.gz bins'
             }
         }
     }
