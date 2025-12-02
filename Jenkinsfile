@@ -21,7 +21,7 @@ pipeline {
 
       stage('package') {
             steps {
-                'tar zcf commands.tar.gz bins'
+                sh 'tar zcf commands.tar.gz bins'
             }
         }
     }
